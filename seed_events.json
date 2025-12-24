@@ -1,0 +1,81 @@
+[
+  {
+    "type": "personnel_change",
+    "date": "880-04-15",
+    "location": "western_archive",
+    "actors": ["tessery_vold"],
+    "details": {
+      "position": "archivist",
+      "change_type": "appointment",
+      "institution": "Western Archive"
+    },
+    "notes": "Tessery Vold appointed as Archivist at the Western Archive. Beginning of her institutional career.",
+    "triggers_cascade": false
+  },
+  {
+    "type": "theory_proposed",
+    "date": "892-06-15",
+    "location": "western_archive",
+    "actors": ["tessery_vold"],
+    "details": {
+      "theory": "probing_theorem",
+      "claim": "Objects are fully determined by how other objects probe them",
+      "school": "relational_philosophy"
+    },
+    "notes": "First statement of the Probing Theorem. Vold's foundational insight that entities are defined relationally.",
+    "triggers_cascade": true
+  },
+  {
+    "type": "manuscript_written",
+    "date": "893-02-10",
+    "location": "western_archive",
+    "actors": ["tessery_vold"],
+    "details": {
+      "title": "Patterns of Passage",
+      "topic": "relational_philosophy",
+      "framework": "passage_diagrams"
+    },
+    "notes": "Major treatise establishing the Passage Diagrams framework for representing objects and morphisms.",
+    "triggers_cascade": true
+  },
+  {
+    "type": "theory_contested",
+    "date": "894-08-22",
+    "location": "capital",
+    "actors": ["marden_krell", "tessery_vold"],
+    "details": {
+      "contested_theory": "probing_theorem",
+      "objection": "Circular definition - probing requires objects to exist first",
+      "objector": "marden_krell"
+    },
+    "notes": "Krell's objection to the Probing Theorem. Argues that you cannot define objects by their relations if relations require pre-existing objects.",
+    "triggers_cascade": true
+  },
+  {
+    "type": "debate_published",
+    "date": "895-03-15",
+    "location": "capital",
+    "actors": ["tessery_vold", "marden_krell", "erris_pol"],
+    "details": {
+      "title": "On Forms and Passages",
+      "participants": ["tessery_vold", "marden_krell", "erris_pol"],
+      "topic": "relational vs. substantive ontology",
+      "outcome": "unresolved"
+    },
+    "notes": "Three-way debate on the fundamental nature of entities. Pol defends substantive Forms; Vold defends relational determination; Krell critiques both.",
+    "triggers_cascade": false
+  },
+  {
+    "type": "manuscript_written",
+    "date": "897-09-20",
+    "location": "western_archive",
+    "actors": ["tessery_vold"],
+    "details": {
+      "title": "On the Coherence of Shifts",
+      "topic": "natural_transformations",
+      "framework": "coherent_shifts"
+    },
+    "notes": "Work extending Passage Diagrams to include coherent transformations between passage patterns.",
+    "triggers_cascade": true
+  }
+]
