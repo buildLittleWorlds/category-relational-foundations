@@ -10,9 +10,10 @@
 
 | Dataset | Rows | Category Theory Analog | Primary Use |
 |---------|------|----------------------|-------------|
-| `passage_diagrams.csv` | 50 | Objects and morphisms | Tutorial 1-3 |
+| `passage_diagrams.csv` | 50 | Objects and morphisms | Tutorial 1-3, 5, 7, 9 |
 | `archive_classifications.csv` | 50 | Pre-order category | Tutorial 2 |
-| `regional_translations.csv` | 50 | Functors | Tutorial 4-6 |
+| `regional_translations.csv` | 50 | Functors, Natural transformations | Tutorial 4-6 |
+| `linguistic_containment.csv` | 50 | Language category | Tutorial 8 |
 
 **Load Pattern:**
 ```python
@@ -23,6 +24,7 @@ BASE_URL = "https://raw.githubusercontent.com/buildLittleWorlds/densworld-datase
 passages = pd.read_csv(BASE_URL + "passage_diagrams.csv")
 classifications = pd.read_csv(BASE_URL + "archive_classifications.csv")
 translations = pd.read_csv(BASE_URL + "regional_translations.csv")
+linguistic = pd.read_csv(BASE_URL + "linguistic_containment.csv")
 ```
 
 ---
@@ -200,6 +202,62 @@ non_functors = translations[translations['preserves_structure'] == False]
 | RT-007 | capital_archive | western_archive | mathematical_treatises | formal_studies | true |
 | RT-026 | mathematical_notation | natural_language | morphism | passage | true |
 | RT-004 | capital_taxonomy | western_taxonomy | anomalous_entities | unclassified | false |
+
+---
+
+## Dataset 4: linguistic_containment.csv
+
+**Description:** Linguistic containment relationships from Densworld texts. Each row represents a morphism in the language category where phrases contain subphrases.
+
+**Category Theory Interpretation:**
+- Objects = phrases/words
+- Morphisms = containment (shorter phrase contained in longer)
+- Pre-order structure (at most one containment between any pair)
+- Probabilities decorate morphisms (enriched category)
+
+### Schema
+
+| Column | Type | Description |
+|--------|------|-------------|
+| `containment_id` | string | Unique identifier (LC-NNN) |
+| `shorter_phrase` | string | The contained phrase (domain) |
+| `longer_phrase` | string | The containing phrase (codomain) |
+| `containment_type` | string | Type: prefix_context, compound_formation, modifier_prefix, etc. |
+| `source_text` | string | Text where containment was observed |
+| `location` | string | Archive or location of source |
+| `observation_date` | date | When documented |
+| `frequency_score` | float | How often this containment appears (0-1) |
+| `context_probability` | float | P(longer_phrase | shorter_phrase) |
+| `observer` | string | Who documented |
+| `notes` | string | Additional context |
+
+### Key Patterns
+
+**Compound formation** (word + word → compound):
+```python
+compounds = linguistic[linguistic['containment_type'] == 'compound_formation']
+# passage → passage diagram, stakdur → stakdur territory
+```
+
+**Modifier prefixes** (adding modifiers):
+```python
+modified = linguistic[linguistic['containment_type'] == 'modifier_prefix']
+# stakdur → apex stakdur, morphism → identity morphism
+```
+
+**Definite article contexts**:
+```python
+definite = linguistic[linguistic['containment_type'] == 'prefix_context']
+# stakdur → the stakdur
+```
+
+### Example Rows
+
+| containment_id | shorter_phrase | longer_phrase | containment_type | context_probability |
+|----------------|----------------|---------------|------------------|---------------------|
+| LC-005 | passage | passage diagram | compound_formation | 0.88 |
+| LC-001 | stakdur | the stakdur | prefix_context | 0.72 |
+| LC-047 | theorem | probing theorem | modifier_prefix | 0.92 |
 
 ---
 
