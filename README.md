@@ -1,6 +1,8 @@
-# Relational Foundations
+# Relational Foundations: Categories and Morphisms
 
-**Course 1 of the Categorical Philosophy Series**
+**Course 1 of the Category Theory & LLMs Series**
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/buildLittleWorlds/category-relational-foundations/blob/main/notebooks/tutorial_01_passage_diagrams.ipynb)
 
 > *"Tell me how everything passes through it, and I will tell you what it is."*
 > — Tessery Vold, Year 892
@@ -121,15 +123,17 @@ jupyter notebook
 
 ---
 
-## The Categorical Philosophy Series
+## Series Navigation
 
-This course is part of a series teaching category theory concepts through Densworld's philosophical frameworks:
+This is **Course 1** in the Category Theory & LLMs series:
 
-| Course | Subject | Status |
-|--------|---------|--------|
-| **1. Relational Foundations** | Categories, functors, natural transformations | **This Course** |
-| 2. The Probing Theorem | Yoneda Lemma, representability | Coming Soon |
-| 3. Enriched Passages | Enriched categories, weighted morphisms | Coming Soon |
+1. **Passage Diagrams** (Tessery Vold) — Categories and morphisms ← *You are here*
+2. **Weighted Passages** (Merrit Vance) — Enriched categories and attention
+3. **Document Functors** (Lorren Dray) — Presheaves and document representations
+4. **Natural Transformations** (Gellen Tross) — Coherent shifts between representations
+5. **The Probing Lemma** (Pelleth Strand) — The Yoneda perspective on embeddings
+6. **Linguistic Categories** (Corren Moll) — Language structure as category
+7. **Attention and Enrichment** (Brennet Kell) — Full transformer architecture
 
 ---
 
